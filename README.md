@@ -1,18 +1,18 @@
 # Pico W MSYS2
-# The ultimate way to build for Pico W on Windows...
+## The ultimate way to build for Pico W on Windows...
 
-## Download `msys2` from https://www.msys2.org/
+1. Download `msys2` from https://www.msys2.org/
 
-## Open `MSYS2 UCRT64` terminal
+2. Open `MSYS2 UCRT64` terminal
 execute `setup.sh`
 
-## Build example app (auto upload)
+3. Build example app (auto upload)
 ```console
 cd app
 ./build.sh
 ```
 
-## Upload with picotool
+4. Upload with picotool
 ```console
 picotool reboot -f -u
 picotool load -x main.uf2
