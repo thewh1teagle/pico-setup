@@ -14,7 +14,7 @@ cd app
 
 ## Upload with picotool
 ```console
-picotool reboot -f
+picotool reboot -f -u
 picotool load -x main.uf2
 ```
 
