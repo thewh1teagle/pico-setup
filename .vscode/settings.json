@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "binary_info.h": "c",
+        "pico_w.h": "c",
+        "pico.h": "c",
+        "cyw43_arch.h": "c"
+    },
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/pico-sdk/src/boards/**",
+    ]
+}
