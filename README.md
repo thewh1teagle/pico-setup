@@ -4,9 +4,12 @@
 1. Download `msys2` from https://www.msys2.org/
 
 2. Open `MSYS2 UCRT64` terminal
-execute `setup.sh`
+execute
+```console
+pacman --needed -S $MINGW_PACKAGE_PREFIX-{toolchain,cmake,libusb,arm-none-eabi-toolchain,make,picotool,pico-sdk} git
+```
 
-3. Build example app (auto upload)
+4. Build example app (auto upload)
 ```console
 cd app
 ./build.sh
