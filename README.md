@@ -6,7 +6,7 @@
 2. Open `MSYS2 UCRT64` terminal
 execute
 ```console
-pacman --needed -S $MINGW_PACKAGE_PREFIX-{toolchain,cmake,libusb,arm-none-eabi-toolchain,make,picotool,pico-sdk} git
+pacman --needed -S $MINGW_PACKAGE_PREFIX-{picotool,pico-sdk} git
 ```
 
 4. Build example app (auto upload)
