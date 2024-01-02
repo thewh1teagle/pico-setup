@@ -12,7 +12,7 @@ pico_sdk_init()
 set(PICO_CYW43_SUPPORTED 1)
 
 add_executable(app
-  src/main.c
+  main.c
 )
 
 pico_enable_stdio_usb(app 1)

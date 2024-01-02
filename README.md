@@ -6,16 +6,16 @@
 2. Open `MSYS2 UCRT64` terminal
 execute
 ```console
+pacman -Sy
 pacman --needed -S $MINGW_PACKAGE_PREFIX-{picotool,pico-sdk} git
+git clone https://github.com/thewh1teagle/pico-setup
+cd pico-setup
+build.cmd
 ```
 
-4. Build example app (auto upload)
-```console
-cd app
-./build.sh
-```
+It will build and upload automatically.
 
-4. Upload with picotool
+## Upload with picotool
 ```console
 picotool reboot -f -u
 picotool load -x main.uf2

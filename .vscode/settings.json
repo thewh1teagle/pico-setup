@@ -1,11 +1,14 @@
 {
-    "files.associations": {
-        "binary_info.h": "c",
-        "pico_w.h": "c",
-        "pico.h": "c",
-        "cyw43_arch.h": "c"
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH}C:\\msys64\\ucrt64\\bin",
+        "PICO_SDK_PATH": "C:\\msys64\\ucrt64\\share\\mingw-w64-ucrt-x86_64-pico-sdk"
     },
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/pico-sdk/src/boards/**",
-    ]
+    "cmake.configureEnvironment": {
+        "PICO_SDK_PATH": "C:\\msys64\\ucrt64\\share\\mingw-w64-ucrt-x86_64-pico-sdk"
+    },
+    "cmake.generator": "MinGW Makefiles",
+    "cmake.additionalCompilerSearchDirs": [
+        "C:/msys64/ucrt64/bin"
+    ],
+    "cmake.launchBehavior": "reuseTerminal"
 }
