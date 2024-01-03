@@ -3,14 +3,13 @@ cmake -B .build -G "Ninja" -DPICO_BOARD=pico_w -DPICO_PLATFORM=rp2040
 cmake --build .build -- -j16
 
 # reboot pico to bootloader
-echo Reboot Pico to bootloader...
-
-if ! picotool load -x .build/app.uf2; then
-    echo "device in application mode, forcing reboot..."
+if ! picotool info > /dev/null; then
+    echo "Device in application mode"
+    echo "Reboot..."
     picotool reboot -u -f
-    sleep 2 # wait until reboot finish
-    picotool load -x .build/app.uf2
+    sleep 2
 fi
-
+picotool load -x .build/app.uf2
+sleep 2 # wait for load
 # open serial
-serust COM19 115200
+./serust COM27 115200
