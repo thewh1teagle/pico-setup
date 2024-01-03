@@ -3,8 +3,7 @@
 
 1. Download `msys2` from [msys2.org](https://www.msys2.org/)
 
-2. Open `MSYS2 UCRT64` terminal
-execute
+2. Open `MSYS2 UCRT64` terminal and execute
 ```console
 pacman -Sy
 pacman --needed -S $MINGW_PACKAGE_PREFIX-{picotool,pico-sdk} git
