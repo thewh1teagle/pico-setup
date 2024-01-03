@@ -32,7 +32,7 @@ picotool load -x main.uf2
 3. Select RP2040 (interface 1), may be different -> replace driver to libusb32
    
 ## In case something went bad and you want to restore drivers:
-1. Hit win+r
+1. Hit `win+r`
 2. type devmgmt.msc and ENTER
 3. find the device and choose update device driver
 4. Choose "let me choose" and try to change it to something else
