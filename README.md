@@ -36,3 +36,27 @@ picotool load -x main.uf2
 [vscode-serial-monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor)
 
 [cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+## Open ucrt64 in Windows terminal from context menu
+![image](https://github.com/thewh1teagle/pico-setup/assets/61390950/10c055d1-32e8-43aa-90cf-22299590a23f)
+
+1. Install windows terminal from
+2. copy the following in new file `ucrt.reg`
+```reg
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw64]
+@="MinGW UCRT64 Here"
+"Icon"="\"C:\\msys64\\ucrt64.ico\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw64\command]
+@="C:\\msys64\\msys2_shell.cmd -defterm -where \"%V/\" -ucrt64"
+
+[HKEY_CLASSES_ROOT\Directory\shell\mingw64]
+@="MinGW UCRT64 Here"
+"Icon"="\"C:\\msys64\\ucrt64.ico\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\mingw64\command]
+@="C:\\msys64\\msys2_shell.cmd -defterm -where \"%V/\" -ucrt64"
+```
+3. open it and apply
