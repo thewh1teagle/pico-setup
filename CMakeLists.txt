@@ -14,8 +14,8 @@ set(PICO_CYW43_SUPPORTED 1)
 add_executable(app
   main.c
 )
-
-pico_enable_stdio_usb(app 1)
+# must use for allowing picotool auto reboot and get serial output
+pico_enable_stdio_usb(app 1) 
 pico_add_extra_outputs(app)
 
 target_link_libraries(app 
