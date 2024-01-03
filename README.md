@@ -1,22 +1,25 @@
-# Pico W MSYS2
+# Pico W MSYS2 🧩
 *The ultimate way to build for Pico W on Windows...*
 
 1. Download `msys2` from [msys2.org](https://www.msys2.org/)
 
-2. Open `MSYS2 UCRT64` terminal and execute
+2. Open `MSYS2 UCRT64` terminal and execute setup script
 ```console
-pacman -Sy
-pacman --needed -S $MINGW_PACKAGE_PREFIX-{picotool,pico-sdk} git
 git clone https://github.com/thewh1teagle/pico-setup
 cd pico-setup
+./setup.sh
+```
+3. Execute build script
+```console
 build.cmd
 ```
-
 It will build and upload automatically.
 
 That's it! 🎉
 
-If you want more enhancments, you can continue reading... ✨
+You ready to start your project...
+
+# Dive Deeper ✨
 
 ## Upload with picotool manually
 ```console
