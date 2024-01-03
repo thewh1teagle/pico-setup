@@ -66,7 +66,10 @@ Windows Registry Editor Version 5.00
 2. open it and apply
 
 ## Open ucrt64 from windows terminal
-1. open windows terminal settings
+<img src="https://github.com/thewh1teagle/pico-setup/assets/61390950/734eea80-fbb4-4011-89c1-84e2afb10b4c" width="280px" height="200px">
+
+1. open windows terminal settings (top arrow -> `settings`)
+2. open json settings (left dropdown -> `open JSON file`)
 3. search for `profiles` and add to profiles list the following
 ```json
 {
