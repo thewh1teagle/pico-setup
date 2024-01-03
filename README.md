@@ -1,5 +1,5 @@
 # Pico W MSYS2
-## The ultimate way to build for Pico W on Windows...
+*The ultimate way to build for Pico W on Windows...*
 
 1. Download `msys2` from https://www.msys2.org/
 
