@@ -21,6 +21,10 @@ picotool reboot -f -u
 picotool load -x main.uf2
 ```
 
+That's it! 🎉
+
+If you want more enhancments, you can continue reading... ✨
+
 ## Fix drivers for uploading with picotool
 1. Download [zadig](https://zadig.akeo.ie/)
 2. Select Option > List All Devices
