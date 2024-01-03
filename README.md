@@ -7,11 +7,11 @@
 ```console
 git clone https://github.com/thewh1teagle/pico-setup
 cd pico-setup
-./setup.sh
+./setup
 ```
 3. Execute build script
 ```console
-build.cmd
+./build
 ```
 It will build and upload automatically.
 
