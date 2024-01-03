@@ -59,3 +59,21 @@ Windows Registry Editor Version 5.00
 @="C:\\msys64\\msys2_shell.cmd -defterm -where \"%V/\" -ucrt64"
 ```
 2. open it and apply
+
+## Open ucrt64 from windows terminal
+1. open windows terminal settings
+3. search for `profiles` and add to profiles list the following
+```json
+{
+    "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+    "name": "UCRT64 / MSYS2",
+    "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -ucrt64",
+    "startingDirectory": "C:/msys64/home/%USERNAME%",
+    "icon": "C:/msys64/ucrt64.ico",
+    "font": 
+    {
+      "face": "Lucida Console",
+      "size": 9
+    }
+}
+```
