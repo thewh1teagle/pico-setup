@@ -37,11 +37,10 @@ picotool load -x main.uf2
 
 [cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
-## Open ucrt64 in Windows terminal from context menu
+## Open ucrt64 from context menu
 ![image](https://github.com/thewh1teagle/pico-setup/assets/61390950/10c055d1-32e8-43aa-90cf-22299590a23f)
 
-1. Install [windows new terminal](https://apps.microsoft.com/detail/9N0DX20HK701?hl=en-US&gl=US) (on windows 11 it's built in)
-2. copy the following in new file `ucrt.reg`
+1. copy the following in new file `ucrt.reg`
 ```reg
 Windows Registry Editor Version 5.00
 
@@ -59,4 +58,4 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\Directory\shell\mingw64\command]
 @="C:\\msys64\\msys2_shell.cmd -defterm -where \"%V/\" -ucrt64"
 ```
-3. open it and apply
+2. open it and apply
