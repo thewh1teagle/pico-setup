@@ -20,6 +20,7 @@
           "-defterm",
           "-here",
           "-no-start",
+          "-use-full-path",
           "-ucrt64"
         ],
       },
