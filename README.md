@@ -1,7 +1,7 @@
 # Pico W MSYS2
 *The ultimate way to build for Pico W on Windows...*
 
-1. Download `msys2` from https://www.msys2.org/
+1. Download `msys2` from [msys2.org](https://www.msys2.org/)
 
 2. Open `MSYS2 UCRT64` terminal
 execute
