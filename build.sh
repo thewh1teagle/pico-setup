@@ -11,5 +11,5 @@ if ! picotool info > /dev/null; then
 fi
 picotool load -x .build/app.uf2
 sleep 2 # wait for load
-# open serial
-./serust COM27 115200
+# open serial if serust command available
+command -v serust &> /dev/null && serust COM27 115200
