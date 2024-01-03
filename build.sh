@@ -12,4 +12,4 @@ fi
 picotool load -x .build/app.uf2
 sleep 2 # wait for load
 # open serial if serust command available
-command -v serust &> /dev/null && serust COM27 115200
+command -v serust &> /dev/null && serust --product-id 000a -b 115200 # 00a is default pico USB PID
