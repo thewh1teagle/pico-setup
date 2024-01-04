@@ -87,3 +87,12 @@ Windows Registry Editor Version 5.00
     }
 }
 ```
+
+## Play with [pico-examples](https://github.com/raspberrypi/pico-examples)
+```console
+git clone https://github.com/raspberrypi/pico-examples --depth 1
+cd pico-examples
+cmake -B build .
+cmake --build build blink -- -j16
+picotool load -x build/blink/blink/uf2
+```
