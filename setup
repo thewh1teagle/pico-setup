@@ -1,6 +1,70 @@
 #!/bin/bash
 
-pacman -Sy
-pacman --noconfirm --needed -S $MINGW_PACKAGE_PREFIX-{picotool,pico-sdk,arm-none-eabi-binutils,arm-none-eabi-gcc,arm-none-eabi-newlib,arm-none-eabi-gdb,cmake,ninja,gcc} git
-git clone https://github.com/thewh1teagle/pico-setup
-cd pico-setup
+NAME="pico-sdk"
+
+SDK_URL="https://github.com/raspberrypi/pico-sdk.git"
+SDK_TARGET=$MINGW_PREFIX/share/$NAME
+PKGDIR="$(pwd)/.package"
+
+function check_exists() {
+    if [ -d "$SDK_TARGET" ]; then
+        echo "Looks like pico-sdk already in $SDK_TARGET"
+        read -p "Abort? (y/n): " res
+        if [ "$res" = "y" ] || [ "$res" = "yes" ] || [ "$res" = "2" ]; then
+            exit 0
+        fi
+    fi
+}
+
+install_deps() {
+    pacman -Sy
+    pacman --noconfirm --needed -S unzip git \
+        $MINGW_PACKAGE_PREFIX-{picotool,arm-none-eabi-binutils,arm-none-eabi-gcc,arm-none-eabi-newlib,arm-none-eabi-gdb,cmake,ninja,gcc,wget}
+}
+
+# until msys2 merge it
+function setup_sdk() {
+    rm -rf $TARGET
+    git clone --depth 1 $SDK_URL $SDK_TARGET
+    git submodule update --init $SDK_TARGET
+
+    # Install profile script
+    mkdir -p "$MINGW_PREFIX/etc/profile.d"
+    echo "export PICO_SDK_PATH=$MINGW_PREFIX/share/$NAME" > "$MINGW_PREFIX/etc/profile.d/$NAME.sh"
+}
+
+# Used for serial monitor until msys2 merge
+function setup_serust() {
+    realname="serust"
+    name=serust_v0.0.1_x86_64-pc-windows-gnu
+    ver="v0.0.1"
+    wget  -q -nc --show-progress "https://github.com/thewh1teagle/serust/releases/download/$ver/$name.zip"
+    unzip -qq $name.zip -d $name
+    
+    mv $name/$realname $MINGW_PREFIX/bin/$realname
+    rm -rf $name.zip $name
+}
+
+function post_install() {
+    tput bold
+	echo "To apply the changes, please either:"
+	echo "1. Relaunch the terminal"
+	echo "   or"
+	echo "2. Execute: source $MINGW_PREFIX/etc/profile.d/pico-sdk.sh"
+	tput sgr0
+}
+
+function run() {
+    rm -rf $PKGDIR
+    mkdir -p $PKGDIR
+    pushd $PKGDIR
+    check_exists
+    install_deps
+    setup_sdk
+    setup_serust
+    post_install
+    popd # exit from build
+    rm -rf $PKGDIR
+}
+
+run
