@@ -96,3 +96,44 @@ cmake -B build .
 cmake --build build blink -- -j16
 picotool load -x build/blink/blink/uf2
 ```
+
+
+# Pico W macOS M1 🧩
+*The ultimate way to build for Pico W on macOS...*
+
+1. Install toolchain
+
+```console
+brew install gcc-arm-embedded
+brew install picotool
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/thewh1teagle/serust/releases/download/v0.0.2/serust-installer.sh | sh
+```
+2. Install Pico SDK
+```console
+sudo mkdir -p /usr/local/share/pico-sdk
+sudo chown $(whoami) /usr/local/share/pico-sdk
+cd /usr/local/share/pico-sdk
+git clone --recursive --depth 1 https://github.com/raspberrypi/pico-sdk.git .
+export PICO_SDK_PATH=/usr/local/share/pico-sdk
+echo 'export PICO_SDK_PATH=/usr/local/share/pico-sdk' >> ~/.zshrc
+source ~/.zshrc
+```
+
+3. Build time
+
+```console
+cmake -B build -DPICO_BOARD=pico_w -DPICO_PLATFORM=rp2040
+cmake --build build -- -j16
+```
+
+4. Upload
+
+```console
+picotool load build/app.elf 
+```
+
+5. Monitor
+
+```console
+serust --product-id 000a
+```
