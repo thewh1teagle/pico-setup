@@ -1,3 +1,14 @@
+# Pico W Setup Guides
+
+## Table of Contents
+
+### Windows
+- [Pico W MSYS2](#pico-w-msys2)
+
+### macOS
+- [Pico W macOS M1](#pico-w-macos-m1)
+
+
 # Pico W MSYS2 🧩
 *The ultimate way to build for Pico W on Windows...*
 
@@ -106,7 +117,7 @@ picotool load -x build/blink/blink/uf2
 ```console
 brew install gcc-arm-embedded
 brew install picotool
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/thewh1teagle/serust/releases/download/v0.0.2/serust-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/thewh1teagle/serust/releases/download/v0.0.3/serust-installer.sh | sh
 ```
 2. Install Pico SDK
 ```console
@@ -135,5 +146,5 @@ picotool load build/app.elf
 5. Monitor
 
 ```console
-serust --product-id 000a
+serust --pid 000a
 ```
